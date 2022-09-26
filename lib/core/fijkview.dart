@@ -555,7 +555,7 @@ class __InnerFijkViewState extends State<_InnerFijkView> {
       if (widget.cover != null && !value.videoRenderStart) {
         ws.add(Positioned.fromRect(
           rect: pos,
-          child: widget.cover,
+          child: widget.cover!,
         ));
       }
 
