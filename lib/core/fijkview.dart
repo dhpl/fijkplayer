@@ -145,7 +145,7 @@ class FijkView extends StatefulWidget {
   final Color color;
 
   /// cover image provider
-  final ImageProvider? cover;
+  final Widget? cover;
 
   /// How a video should be inscribed into this [FijkView].
   final FijkFit fit;
@@ -350,7 +350,7 @@ class _InnerFijkView extends StatefulWidget {
 
   final _FijkViewState fijkViewState;
   final bool fullScreen;
-  final ImageProvider? cover;
+  final Widget? cover;
   final FijkData data;
 
   @override
@@ -555,10 +555,7 @@ class __InnerFijkViewState extends State<_InnerFijkView> {
       if (widget.cover != null && !value.videoRenderStart) {
         ws.add(Positioned.fromRect(
           rect: pos,
-          child: Image(
-            image: widget.cover!,
-            fit: BoxFit.fill,
-          ),
+          child: widget.cover,
         ));
       }
 
