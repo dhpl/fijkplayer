@@ -56,7 +56,7 @@ class FijkPlayer extends ChangeNotifier implements ValueListenable<FijkValue> {
 
   void _setValue(FijkValue newValue) {
     if (_value == newValue) return;
-    _value = newValue.copyWith(exception: null);
+    _value = newValue;
     notifyListeners();
   }
 
@@ -584,7 +584,7 @@ class FijkPlayer extends ChangeNotifier implements ValueListenable<FijkValue> {
     final PlatformException e = obj as PlatformException;
     FijkException exception = FijkException.fromPlatformException(e);
     FijkLog.e("$this errorListener: $exception");
-    _setValue(value.copyWith(exception: exception));
+    _setValue(value.copyWith(exception: FijkException(99, '')));
   }
 
   @override
