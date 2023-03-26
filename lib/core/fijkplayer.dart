@@ -56,7 +56,7 @@ class FijkPlayer extends ChangeNotifier implements ValueListenable<FijkValue> {
 
   void _setValue(FijkValue newValue) {
     if (_value == newValue) return;
-    _value = newValue;
+    _value = newValue.copyWith(exception: null);
     notifyListeners();
   }
 
